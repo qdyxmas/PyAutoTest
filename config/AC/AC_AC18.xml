@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prod Tp="AC_AC18">
+<Mod name="Wlan2Wlan" tm="Wlan2Wlan">
+<Item ti="1] 6信道无线到无线">
+<Case>1) 6信道TCP</Case>
+<Case>2) 6信道UDP</Case>
+</Item>
+<Item ti="2] 149信道无线到无线">
+<Case>1) 149信道TCP</Case>
+<Case>2) 149信道UDP</Case>
+</Item>
+</Mod>
+<Mod name="WlanToWan" tm="WlanToWan">
+<Item ti="1] 2.4G无线转发率">
+<Case>1) UDP_Tx</Case>
+<Case>2) UDP_Rx</Case>
+<Case>3) TCP_Tx</Case>
+<Case>4) TCP_Rx</Case>
+</Item>
+<Item ti="2] 5G无线转发率测试">
+<Case>1) UDP_Tx</Case>
+<Case>2) UDP_Rx</Case>
+<Case>3) TCP_Tx</Case>
+<Case>4) TCP_Rx</Case>
+</Item>
+</Mod>
+<Mod name="PacketLoss" tm="PacketLoss">
+<Item ti="1] 2.4G无线丢包率">
+<Case>1) UDP_Tx_76字节</Case>
+<Case>2) UDP_Rx_76字节</Case>
+<Case>3) TCP_Tx_76字节</Case>
+<Case>4) TCP_Rx_76字节</Case>
+<Case>5) UDP_Tx_256字节</Case>
+<Case>6) UDP_Rx_256字节</Case>
+<Case>7) TCP_Tx_256字节</Case>
+<Case>8) TCP_Rx_256字节</Case>
+<Case>9) UDP_Tx_512字节</Case>
+<Case>10) UDP_Rx_512字节</Case>
+<Case>11) TCP_Tx_512字节</Case>
+<Case>12) TCP_Rx_512字节</Case>
+<Case>13) UDP_Tx_1518字节</Case>
+<Case>14) UDP_Rx_1518字节</Case>
+<Case>15) TCP_Tx_1518字节</Case>
+<Case>16) TCP_Rx_1518字节</Case>
+</Item>
+<Item ti="2] 5G无线丢包率">
+<Case>1) UDP_Tx_76字节</Case>
+<Case>2) UDP_Rx_76字节</Case>
+<Case>3) TCP_Tx_76字节</Case>
+<Case>4) TCP_Rx_76字节</Case>
+<Case>5) UDP_Tx_256字节</Case>
+<Case>6) UDP_Rx_256字节</Case>
+<Case>7) TCP_Tx_256字节</Case>
+<Case>8) TCP_Rx_256字节</Case>
+<Case>9) UDP_Tx_512字节</Case>
+<Case>10) UDP_Rx_512字节</Case>
+<Case>11) TCP_Tx_512字节</Case>
+<Case>12) TCP_Rx_512字节</Case>
+<Case>13) UDP_Tx_1518字节</Case>
+<Case>14) UDP_Rx_1518字节</Case>
+<Case>15) TCP_Tx_1518字节</Case>
+<Case>16) TCP_Rx_1518字节</Case>
+</Item>
+</Mod>
+<Mod name="LanToWan" tm="LanToWan">
+<Item ti="1] 有线NAT转发率">
+<Case>1) TCP转发率</Case>
+<Case>2) UDP转发率</Case>
+</Item>
+</Mod>
+<Mod name="ForwordLate" tm="ForwordLate">
+<Item ti="1] 2.4G无线转发延迟">
+<Case>1) UDP_Tx</Case>
+<Case>2) UDP_Rx</Case>
+<Case>3) TCP_Tx</Case>
+<Case>4) TCP_Rx</Case>
+</Item>
+<Item ti="2] 5G无线转发延迟">
+<Case>1) UDP_Tx</Case>
+<Case>2) UDP_Rx</Case>
+<Case>3) TCP_Tx</Case>
+<Case>4) TCP_Rx</Case>
+</Item>
+</Mod>
+<Mod name="Bandwidth" tm="Bandwidth">
+<Item ti="1] 1信道频宽">
+<Case>1) 1信道20M_UDP_Tx</Case>
+<Case>2) 1信道20M_UDP_Rx</Case>
+<Case>3) 1信道40M_UDP_Tx</Case>
+<Case>4) 1信道40M_UDP_Rx</Case>
+</Item>
+<Item ti="2] 149信道频宽">
+<Case>1) 149信道20M_UDP_Tx</Case>
+<Case>2) 149信道20M_UDP_Rx</Case>
+<Case>3) 149信道40M_UDP_Tx</Case>
+<Case>4) 149信道40M_UDP_Rx</Case>
+<Case>5) 149信道80M_UDP_Tx</Case>
+<Case>6) 149信道80M_UDP_Rx</Case>
+</Item>
+</Mod>
+<Mod name="3T3R24G" tm="3T3R24G">
+<Item ti="1] 1信道B模式">
+<Case>1) 速率集为1Mbps_TCP_Tx</Case>
+<Case>2) 速率集为1Mbps_TCP_Rx</Case>
+<Case>3) 速率集为1Mbps_TCP_TRx</Case>
+<Case>4) 速率集为1Mbps_UDP_Tx</Case>
+<Case>5) 速率集为1Mbps_UDP_Rx</Case>
+<Case>6) 速率集为1Mbps_UDP_TRx</Case>
+<Case>7) 速率集为11Mbps_TCP_Tx</Case>
+<Case>8) 速率集为11Mbps_TCP_Rx</Case>
+<Case>9) 速率集为11Mbps_TCP_TRx</Case>
+<Case>10) 速率集为11Mbps_UDP_Tx</Case>
+<Case>11) 速率集为11Mbps_UDP_Rx</Case>
+<Case>12) 速率集为11Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="2] 1信道G模式">
+<Case>1) 速率集为6Mbps_TCP_Tx</Case>
+<Case>2) 速率集为6Mbps_TCP_Rx</Case>
+<Case>3) 速率集为6Mbps_TCP_TRx</Case>
+<Case>4) 速率集为6Mbps_UDP_Tx</Case>
+<Case>5) 速率集为6Mbps_UDP_Rx</Case>
+<Case>6) 速率集为6Mbps_UDP_TRx</Case>
+<Case>7) 速率集为54Mbps_TCP_Tx</Case>
+<Case>8) 速率集为54Mbps_TCP_Rx</Case>
+<Case>9) 速率集为54Mbps_TCP_TRx</Case>
+<Case>10) 速率集为54Mbps_UDP_Tx</Case>
+<Case>11) 速率集为54Mbps_UDP_Rx</Case>
+<Case>12) 速率集为54Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="3] 1信道N模式">
+<Case>1) MCS0_TCP_Tx</Case>
+<Case>2) MCS0_TCP_Rx</Case>
+<Case>3) MCS0_TCP_TRx</Case>
+<Case>4) MCS0_UDP_Tx</Case>
+<Case>5) MCS0_UDP_Rx</Case>
+<Case>6) MCS0_UDP_TRx</Case>
+<Case>7) MCS5_TCP_Tx</Case>
+<Case>8) MCS5_TCP_Rx</Case>
+<Case>9) MCS5_TCP_TRx</Case>
+<Case>10) MCS5_UDP_Tx</Case>
+<Case>11) MCS5_UDP_Rx</Case>
+<Case>12) MCS5_UDP_TRx</Case>
+<Case>13) MCS15_TCP_Tx</Case>
+<Case>14) MCS15_TCP_Rx</Case>
+<Case>15) MCS15_TCP_TRx</Case>
+<Case>16) MCS15_UDP_Tx</Case>
+<Case>17) MCS15_UDP_Rx</Case>
+<Case>18) MCS15_UDP_TRx</Case>
+<Case>19) MCS18_TCP_TX</Case>
+<Case>20) MCS18_TCP_RX</Case>
+<Case>21) MCS18_TCP_TRX</Case>
+<Case>22) MCS18_UDP_TX</Case>
+<Case>23) MCS18_UDP_RX</Case>
+<Case>24) MCS18_UDP_TRX</Case>
+<Case>25) MCS23_TCP_TX</Case>
+<Case>26) MCS23_TCP_RX</Case>
+<Case>27) MCS23_TCP_TRX</Case>
+<Case>28) MCS23_UDP_TX</Case>
+<Case>29) MCS23_UDP_RX</Case>
+<Case>30) MCS23_UDP_TRX</Case>
+</Item>
+<Item ti="4] 2信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="5] 3信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="6] 4信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="7] 5信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="8] 6信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="9] 7信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="10] 8信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="11] 9信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="12] 10信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="13] 11信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="14] 12信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="15] 13信道测试">
+<Case>1) 速率集为450Mbps_TCP_Tx</Case>
+<Case>2) 速率集为450Mbps_TCP_Rx</Case>
+<Case>3) 速率集为450Mbps_TCP_TRx</Case>
+<Case>4) 速率集为450Mbps_UDP_Tx</Case>
+<Case>5) 速率集为450Mbps_UDP_Rx</Case>
+<Case>6) 速率集为450Mbps_UDP_TRx</Case>
+</Item>
+</Mod>
+<Mod name="3T3R5G" tm="3T3R5G">
+<Item ti="1] 149信道A模式">
+<Case>1) 速率集为6Mbps_TCP_Tx</Case>
+<Case>2) 速率集为6Mbps_TCP_Rx</Case>
+<Case>3) 速率集为6Mbps_TCP_TRx</Case>
+<Case>4) 速率集为6Mbps_UDP_Tx</Case>
+<Case>5) 速率集为6Mbps_UDP_Rx</Case>
+<Case>6) 速率集为6Mbps_UDP_TRx</Case>
+<Case>7) 速率集为54Mbps_TCP_Tx</Case>
+<Case>8) 速率集为54Mbps_TCP_Rx</Case>
+<Case>9) 速率集为54Mbps_TCP_TRx</Case>
+<Case>10) 速率集为54Mbps_UDP_Tx</Case>
+<Case>11) 速率集为54Mbps_UDP_Rx</Case>
+<Case>12) 速率集为54Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="2] 149信道N模式">
+<Case>1) 3T3R_5G_149_N_MCS0_TCP_TX</Case>
+<Case>2) 3T3R_5G_149_N_MCS0_TCP_RX</Case>
+<Case>3) 3T3R_5G_149_N_MCS0_TCP_TRX</Case>
+<Case>4) 3T3R_5G_149_N_MCS0_UDP_TX</Case>
+<Case>5) 3T3R_5G_149_N_MCS0_UDP_RX</Case>
+<Case>6) 3T3R_5G_149_N_MCS0_UDP_TRX</Case>
+<Case>7) 3T3R_5G_149_N_MCS5_TCP_TX</Case>
+<Case>8) 3T3R_5G_149_N_MCS5_TCP_RX</Case>
+<Case>9) 3T3R_5G_149_N_MCS5_TCP_TRX</Case>
+<Case>10) 3T3R_5G_149_N_MCS5_UDP_TX</Case>
+<Case>11) 3T3R_5G_149_N_MCS5_UDP_RX</Case>
+<Case>12) 3T3R_5G_149_N_MCS5_UDP_TRX</Case>
+<Case>13) 3T3R_5G_149_N_MCS15_TCP_TX</Case>
+<Case>14) 3T3R_5G_149_N_MCS15_TCP_RX</Case>
+<Case>15) 3T3R_5G_149_N_MCS15_TCP_TRX</Case>
+<Case>16) 3T3R_5G_149_N_MCS15_UDP_TX</Case>
+<Case>17) 3T3R_5G_149_N_MCS15_UDP_RX</Case>
+<Case>18) 3T3R_5G_149_N_MCS15_UDP_TRX</Case>
+<Case>19) 3T3R_5G_149_N_MCS18_TCP_TX</Case>
+<Case>20) 3T3R_5G_149_N_MCS18_TCP_RX</Case>
+<Case>21) 3T3R_5G_149_N_MCS18_TCP_TRX</Case>
+<Case>22) 3T3R_5G_149_N_MCS18_UDP_TX</Case>
+<Case>23) 3T3R_5G_149_N_MCS18_UDP_RX</Case>
+<Case>24) 3T3R_5G_149_N_MCS18_UDP_TRX</Case>
+<Case>25) 3T3R_5G_149_N_MCS23_TCP_TX</Case>
+<Case>26) 3T3R_5G_149_N_MCS23_TCP_RX</Case>
+<Case>27) 3T3R_5G_149_N_MCS23_TCP_TRX</Case>
+<Case>28) 3T3R_5G_149_N_MCS23_UDP_TX</Case>
+<Case>29) 3T3R_5G_149_N_MCS23_UDP_RX</Case>
+<Case>30) 3T3R_5G_149_N_MCS23_UDP_TRX</Case>
+</Item>
+<Item ti="3] 149信道AC模式">
+<Case>1) 3T3R_5G_149_AC_MCS0_TCP_TX</Case>
+<Case>2) 3T3R_5G_149_AC_MCS0_TCP_RX</Case>
+<Case>3) 3T3R_5G_149_AC_MCS0_TCP_TRX</Case>
+<Case>4) 3T3R_5G_149_AC_MCS0_UDP_TX</Case>
+<Case>5) 3T3R_5G_149_AC_MCS0_UDP_RX</Case>
+<Case>6) 3T3R_5G_149_AC_MCS0_UDP_TRX</Case>
+<Case>7) 3T3R_5G_149_AC_MCS2_TCP_TX</Case>
+<Case>8) 3T3R_5G_149_AC_MCS2_TCP_RX</Case>
+<Case>9) 3T3R_5G_149_AC_MCS2_TCP_TRX</Case>
+<Case>10) 3T3R_5G_149_AC_MCS2_UDP_TX</Case>
+<Case>11) 3T3R_5G_149_AC_MCS2_UDP_RX</Case>
+<Case>12) 3T3R_5G_149_AC_MCS2_UDP_TRX</Case>
+<Case>13) 3T3R_5G_149_AC_MCS5_TCP_TX</Case>
+<Case>14) 3T3R_5G_149_AC_MCS5_TCP_RX</Case>
+<Case>15) 3T3R_5G_149_AC_MCS5_TCP_TRX</Case>
+<Case>16) 3T3R_5G_149_AC_MCS5_UDP_TX</Case>
+<Case>17) 3T3R_5G_149_AC_MCS5_UDP_RX</Case>
+<Case>18) 3T3R_5G_149_AC_MCS5_UDP_TRX</Case>
+<Case>19) 3T3R_5G_149_AC_MCS7_TCP_TX</Case>
+<Case>20) 3T3R_5G_149_AC_MCS7_TCP_RX</Case>
+<Case>21) 3T3R_5G_149_AC_MCS7_TCP_TRX</Case>
+<Case>22) 3T3R_5G_149_AC_MCS7_UDP_TX</Case>
+<Case>23) 3T3R_5G_149_AC_MCS7_UDP_RX</Case>
+<Case>24) 3T3R_5G_149_AC_MCS7_UDP_TRX</Case>
+<Case>25) 3T3R_5G_149_AC_MCS9_TCP_TX</Case>
+<Case>26) 3T3R_5G_149_AC_MCS9_TCP_RX</Case>
+<Case>27) 3T3R_5G_149_AC_MCS9_TCP_TRX</Case>
+<Case>28) 3T3R_5G_149_AC_MCS9_UDP_TX</Case>
+<Case>29) 3T3R_5G_149_AC_MCS9_UDP_RX</Case>
+<Case>30) 3T3R_5G_149_AC_MCS9_UDP_TRX</Case>
+</Item>
+<Item ti="4] 36信道测试">
+<Case>1) 3T3R_5G_36_AC_MCS9_TCP_TX</Case>
+<Case>2) 3T3R_5G_36_AC_MCS9_TCP_RX</Case>
+<Case>3) 3T3R_5G_36_AC_MCS9_TCP_TRX</Case>
+<Case>4) 3T3R_5G_36_AC_MCS9_UDP_TX</Case>
+<Case>5) 3T3R_5G_36_AC_MCS9_UDP_RX</Case>
+<Case>6) 3T3R_5G_36_AC_MCS9_UDP_TRX</Case>
+</Item>
+<Item ti="5] 48信道测试">
+<Case>1) 3T3R_5G_48_AC_MCS9_TCP_TX</Case>
+<Case>2) 3T3R_5G_48_AC_MCS9_TCP_RX</Case>
+<Case>3) 3T3R_5G_48_AC_MCS9_TCP_TRX</Case>
+<Case>4) 3T3R_5G_48_AC_MCS9_UDP_TX</Case>
+<Case>5) 3T3R_5G_48_AC_MCS9_UDP_RX</Case>
+<Case>6) 3T3R_5G_48_AC_MCS9_UDP_TRX</Case>
+</Item>
+<Item ti="6] 153信道测试">
+<Case>1) 3T3R_5G_153_AC_MCS9_TCP_TX</Case>
+<Case>2) 3T3R_5G_153_AC_MCS9_TCP_RX</Case>
+<Case>3) 3T3R_5G_153_AC_MCS9_TCP_TRX</Case>
+<Case>4) 3T3R_5G_153_AC_MCS9_UDP_TX</Case>
+<Case>5) 3T3R_5G_153_AC_MCS9_UDP_RX</Case>
+<Case>6) 3T3R_5G_153_AC_MCS9_UDP_TRX</Case>
+</Item>
+<Item ti="7] 157信道测试">
+<Case>1) 3T3R_5G_157_AC_MCS9_TCP_TX</Case>
+<Case>2) 3T3R_5G_157_AC_MCS9_TCP_RX</Case>
+<Case>3) 3T3R_5G_157_AC_MCS9_TCP_TRX</Case>
+<Case>4) 3T3R_5G_157_AC_MCS9_UDP_TX</Case>
+<Case>5) 3T3R_5G_157_AC_MCS9_UDP_RX</Case>
+<Case>6) 3T3R_5G_157_AC_MCS9_UDP_TRX</Case>
+</Item>
+<Item ti="8] 161信道测试">
+<Case>1) 3T3R_5G_161_AC_MCS9_TCP_TX</Case>
+<Case>2) 3T3R_5G_161_AC_MCS9_TCP_RX</Case>
+<Case>3) 3T3R_5G_161_AC_MCS9_TCP_TRX</Case>
+<Case>4) 3T3R_5G_161_AC_MCS9_UDP_TX</Case>
+<Case>5) 3T3R_5G_161_AC_MCS9_UDP_RX</Case>
+<Case>6) 3T3R_5G_161_AC_MCS9_UDP_TRX</Case>
+</Item>
+</Mod>
+</Prod>

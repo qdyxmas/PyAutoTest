@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prod Tp="REALTEK_F6">
+<Mod name="channels" tm="各个信道">
+<Item name="channels_1" ti="1] 1信道">
+<Case name="channels_1_1">1) Tx</Case>
+<Case name="channels_1_2">2) Rx</Case>
+<Case name="channels_1_3">3) TRx</Case>
+</Item>
+<Item name="channels_2" ti="2] 2信道">
+<Case name="channels_2_1">1) Tx</Case>
+<Case name="channels_2_2">2) Rx</Case>
+<Case name="channels_2_3">3) TRx</Case>
+</Item>
+<Item name="channels_3" ti="3] 3信道">
+<Case name="channels_3_1">1) Tx</Case>
+<Case name="channels_3_2">2) Rx</Case>
+<Case name="channels_3_3">3) TRx</Case>
+</Item>
+<Item name="channels_4" ti="4] 4信道">
+<Case name="channels_4_1">1) Tx</Case>
+<Case name="channels_4_2">2) Rx</Case>
+<Case name="channels_4_3">3) TRx</Case>
+</Item>
+<Item name="channels_5" ti="5] 5信道">
+<Case name="channels_5_1">1) Tx</Case>
+<Case name="channels_5_2">2) Rx</Case>
+<Case name="channels_5_3">3) TRx</Case>
+</Item>
+<Item name="channels_6" ti="6] 6信道">
+<Case name="channels_6_1">1) Tx</Case>
+<Case name="channels_6_2">2) Rx</Case>
+<Case name="channels_6_3">3) TRx</Case>
+</Item>
+<Item name="channels_7" ti="7] 7信道">
+<Case name="channels_7_1">1) Tx</Case>
+<Case name="channels_7_2">2) Rx</Case>
+<Case name="channels_7_3">3) TRx</Case>
+</Item>
+<Item name="channels_8" ti="8] 8信道">
+<Case name="channels_8_1">1) Tx</Case>
+<Case name="channels_8_2">2) Rx</Case>
+<Case name="channels_8_3">3) TRx</Case>
+</Item>
+<Item name="channels_9" ti="9] 9信道">
+<Case name="channels_9_1">1) Tx</Case>
+<Case name="channels_9_2">2) Rx</Case>
+<Case name="channels_9_3">3) TRx</Case>
+</Item>
+<Item name="channels_10" ti="10] 10信道">
+<Case name="channels_10_1">1) Tx</Case>
+<Case name="channels_10_2">2) Rx</Case>
+<Case name="channels_10_3">3) TRx</Case>
+</Item>
+<Item name="channels_11" ti="11] 11信道">
+<Case name="channels_11_1">1) Tx</Case>
+<Case name="channels_11_2">2) Rx</Case>
+<Case name="channels_11_3">3) TRx</Case>
+</Item>
+<Item name="channels_12" ti="12] 12信道">
+<Case name="channels_12_1">1) Tx</Case>
+<Case name="channels_12_2">2) Rx</Case>
+<Case name="channels_12_3">3) TRx</Case>
+</Item>
+<Item name="channels_13" ti="13] 13信道">
+<Case name="channels_13_1">1) Tx</Case>
+<Case name="channels_13_2">2) Rx</Case>
+<Case name="channels_13_3">3) TRx</Case>
+</Item>
+<Item name="channels_14" ti="14] 36信道">
+<Case name="channels_14_1">1) Tx</Case>
+<Case name="channels_14_2">2) Rx</Case>
+<Case name="channels_14_3">3) TRx</Case>
+</Item>
+<Item name="channels_15" ti="15] 40信道">
+<Case name="channels_15_1">1) Tx</Case>
+<Case name="channels_15_2">2) Rx</Case>
+<Case name="channels_15_3">3) TRx</Case>
+</Item>
+<Item name="channels_16" ti="16] 44信道">
+<Case name="channels_16_1">1) Tx</Case>
+<Case name="channels_16_2">2) Rx</Case>
+<Case name="channels_16_3">3) TRx</Case>
+</Item>
+<Item name="channels_17" ti="17] 48信道">
+<Case name="channels_17_1">1) Tx</Case>
+<Case name="channels_17_2">2) Rx</Case>
+<Case name="channels_17_3">3) TRx</Case>
+</Item>
+<Item name="channels_18" ti="18] 149信道">
+<Case name="channels_18_1">1) Tx</Case>
+<Case name="channels_18_2">2) Rx</Case>
+<Case name="channels_18_3">3) TRx</Case>
+</Item>
+<Item name="channels_19" ti="19] 153信道">
+<Case name="channels_19_1">1) Tx</Case>
+<Case name="channels_19_2">2) Rx</Case>
+<Case name="channels_19_3">3) TRx</Case>
+</Item>
+<Item name="channels_20" ti="20] 157信道">
+<Case name="channels_20_1">1) Tx</Case>
+<Case name="channels_20_2">2) Rx</Case>
+<Case name="channels_20_3">3) TRx</Case>
+</Item>
+<Item name="channels_21" ti="21] 161信道">
+<Case name="channels_21_1">1) Tx</Case>
+<Case name="channels_21_2">2) Rx</Case>
+<Case name="channels_21_3">3) TRx</Case>
+</Item>
+</Mod>
+<Mod name="bandwidths" tm="各个频宽">
+<Item name="bandwidths_1" ti="1] 1信道20频宽TCP">
+<Case name="bandwidths_1_1">1) Tx</Case>
+</Item>
+<Item name="bandwidths_2" ti="2] 1信道20频宽UDP">
+<Case name="bandwidths_2_1">1) Tx</Case>
+</Item>
+<Item name="bandwidths_3" ti="3] 1信道40频宽TCP">
+<Case name="bandwidths_3_1">1) Tx</Case>
+</Item>
+<Item name="bandwidths_4" ti="4] 1信道40频宽UDP">
+<Case name="bandwidths_4_1">1) Tx</Case>
+</Item>
+<Item name="bandwidths_5" ti="5] 6信道20频宽TCP">
+<Case name="bandwidths_5_1">1) Tx</Case>
+</Item>
+<Item name="bandwidths_6" ti="6] 6信道20频宽UDP">
+<Case name="bandwidths_6_1">1) Tx</Case>
+</Item>
+<Item name="bandwidths_7" ti="7] 6信道40频宽TCP">
+<Case name="bandwidths_7_1">1) Tx</Case>
+</Item>
+<Item name="bandwidths_8" ti="8] 6信道40频宽UDP">
+<Case name="bandwidths_8_1">1) Tx</Case>
+</Item>
+<Item name="bandwidths_9" ti="9] 11信道20频宽TCP">
+<Case name="bandwidths_9_1">1) Tx</Case>
+</Item>
+<Item name="bandwidths_10" ti="10] 11信道20频宽UDP">
+<Case name="bandwidths_10_1">1) Tx</Case>
+</Item>
+<Item name="bandwidths_11" ti="11] 11信道40频宽TCP">
+<Case name="bandwidths_11_1">1) Tx</Case>
+</Item>
+<Item name="bandwidths_12" ti="12] 11信道40频宽UDP">
+<Case name="bandwidths_12_1">1) Tx</Case>
+</Item>
+</Mod>
+<Mod name="lantowan" tm="有线LAN到WAN">
+<Item name="lantowan_1" ti="1] 静态接入">
+<Case name="lantowan_1_1">1) Tx</Case>
+<Case name="lantowan_1_2">2) Rx</Case>
+<Case name="lantowan_1_3">3) TRx</Case>
+</Item>
+<Item name="lantowan_2" ti="2] 动态接入">
+<Case name="lantowan_2_1">1) Tx</Case>
+<Case name="lantowan_2_2">2) Rx</Case>
+<Case name="lantowan_2_3">3) TRx</Case>
+</Item>
+<Item name="lantowan_3" ti="3] PPPoE接入">
+<Case name="lantowan_3_1">1) Tx</Case>
+<Case name="lantowan_3_2">2) Rx</Case>
+<Case name="lantowan_3_3">3) TRx</Case>
+</Item>
+<Item name="lantowan_4" ti="4] PPTP接入">
+<Case name="lantowan_4_1">1) Tx</Case>
+<Case name="lantowan_4_2">2) Rx</Case>
+<Case name="lantowan_4_3">3) TRx</Case>
+</Item>
+<Item name="lantowan_5" ti="5] L2TP接入">
+<Case name="lantowan_5_1">1) Tx</Case>
+<Case name="lantowan_5_2">2) Rx</Case>
+<Case name="lantowan_5_3">3) TRx</Case>
+</Item>
+</Mod>
+</Prod>

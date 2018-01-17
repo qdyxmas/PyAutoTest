@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prod Tp="AC_AC10">
+<Mod name="2T2R5G" tm="2T2R5G">
+<Item ti="1] 149信道A模式">
+<Case>1) 速率集为6Mbps_TCP_Tx</Case>
+<Case>2) 速率集为6Mbps_TCP_Rx</Case>
+<Case>3) 速率集为6Mbps_TCP_TRx</Case>
+<Case>4) 速率集为6Mbps_UDP_Tx</Case>
+<Case>5) 速率集为6Mbps_UDP_Rx</Case>
+<Case>6) 速率集为6Mbps_UDP_TRx</Case>
+<Case>7) 速率集为54Mbps_TCP_Tx</Case>
+<Case>8) 速率集为54Mbps_TCP_Rx</Case>
+<Case>9) 速率集为54Mbps_TCP_TRx</Case>
+<Case>10) 速率集为54Mbps_UDP_Tx</Case>
+<Case>11) 速率集为54Mbps_UDP_Rx</Case>
+<Case>12) 速率集为54Mbps_UDP_TRx</Case>
+</Item>
+</Mod>
+</Prod>

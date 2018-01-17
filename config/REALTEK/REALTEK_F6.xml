@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prod Tp="REALTEK_F6">
+<Mod name="3T3R24G" tm="3T3R24G">
+<Item ti="1] 1信道B模式">
+<Case>1) 速率集为1Mbps_TCP_Tx</Case>
+<Case>2) 速率集为1Mbps_TCP_Rx</Case>
+<Case>3) 速率集为1Mbps_TCP_TRx</Case>
+<Case>4) 速率集为1Mbps_UDP_Tx</Case>
+<Case>5) 速率集为1Mbps_UDP_Rx</Case>
+<Case>6) 速率集为1Mbps_UDP_TRx</Case>
+<Case>7) 速率集为11Mbps_TCP_Tx</Case>
+<Case>8) 速率集为11Mbps_TCP_Rx</Case>
+<Case>9) 速率集为11Mbps_TCP_TRx</Case>
+<Case>10) 速率集为11Mbps_UDP_Tx</Case>
+<Case>11) 速率集为11Mbps_UDP_Rx</Case>
+<Case>12) 速率集为11Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="2] 1信道G模式">
+<Case>1) 速率集为6Mbps_TCP_Tx</Case>
+<Case>2) 速率集为6Mbps_TCP_Rx</Case>
+<Case>3) 速率集为6Mbps_TCP_TRx</Case>
+<Case>4) 速率集为6Mbps_UDP_Tx</Case>
+<Case>5) 速率集为6Mbps_UDP_Rx</Case>
+<Case>6) 速率集为6Mbps_UDP_TRx</Case>
+<Case>7) 速率集为18Mbps_TCP_Tx</Case>
+<Case>8) 速率集为18Mbps_TCP_Rx</Case>
+<Case>9) 速率集为18Mbps_TCP_TRx</Case>
+<Case>10) 速率集为18Mbps_UDP_Tx</Case>
+<Case>11) 速率集为18Mbps_UDP_Rx</Case>
+<Case>12) 速率集为18Mbps_UDP_TRx</Case>
+<Case>13) 速率集为24Mbps_TCP_Tx</Case>
+<Case>14) 速率集为24Mbps_TCP_Rx</Case>
+<Case>15) 速率集为24Mbps_TCP_TRx</Case>
+<Case>16) 速率集为24Mbps_UDP_Tx</Case>
+<Case>17) 速率集为24Mbps_UDP_Rx</Case>
+<Case>18) 速率集为24Mbps_UDP_TRx</Case>
+<Case>19) 速率集为54Mbps_TCP_Tx</Case>
+<Case>20) 速率集为54Mbps_TCP_Rx</Case>
+<Case>21) 速率集为54Mbps_TCP_TRx</Case>
+<Case>22) 速率集为54Mbps_UDP_Tx</Case>
+<Case>23) 速率集为54Mbps_UDP_Rx</Case>
+<Case>24) 速率集为54Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="3] 1信道N模式">
+<Case>1) 速率集为15Mbps_TCP_Tx</Case>
+<Case>2) 速率集为15Mbps_TCP_Rx</Case>
+<Case>3) 速率集为15Mbps_TCP_TRx</Case>
+<Case>4) 速率集为15Mbps_UDP_Tx</Case>
+<Case>5) 速率集为15Mbps_UDP_Rx</Case>
+<Case>6) 速率集为15Mbps_UDP_TRx</Case>
+<Case>7) 速率集为45Mbps_TCP_Tx</Case>
+<Case>8) 速率集为45Mbps_TCP_Rx</Case>
+<Case>9) 速率集为45Mbps_TCP_TRx</Case>
+<Case>10) 速率集为45Mbps_UDP_Tx</Case>
+<Case>11) 速率集为45Mbps_UDP_Rx</Case>
+<Case>12) 速率集为45Mbps_UDP_TRx</Case>
+<Case>13) 速率集为120Mbps_TCP_Tx</Case>
+<Case>14) 速率集为120Mbps_TCP_Rx</Case>
+<Case>15) 速率集为120Mbps_TCP_TRx</Case>
+<Case>16) 速率集为120Mbps_UDP_Tx</Case>
+<Case>17) 速率集为120Mbps_UDP_Rx</Case>
+<Case>18) 速率集为120Mbps_UDP_TRx</Case>
+<Case>19) 速率集为150Mbps_TCP_Tx</Case>
+<Case>20) 速率集为150Mbps_TCP_Rx</Case>
+<Case>21) 速率集为150Mbps_TCP_TRx</Case>
+<Case>22) 速率集为150Mbps_UDP_Tx</Case>
+<Case>23) 速率集为150Mbps_UDP_Rx</Case>
+<Case>24) 速率集为150Mbps_UDP_TRx</Case>
+<Case>25) 速率集为180Mbps_TCP_Tx</Case>
+<Case>26) 速率集为180Mbps_TCP_Rx</Case>
+<Case>27) 速率集为180Mbps_TCP_TRx</Case>
+<Case>28) 速率集为180Mbps_UDP_Tx</Case>
+<Case>29) 速率集为180Mbps_UDP_Rx</Case>
+<Case>30) 速率集为180Mbps_UDP_TRx</Case>
+<Case>31) 速率集为300Mbps_TCP_Tx</Case>
+<Case>32) 速率集为300Mbps_TCP_Rx</Case>
+<Case>33) 速率集为300Mbps_TCP_TRx</Case>
+<Case>34) 速率集为300Mbps_UDP_Tx</Case>
+<Case>35) 速率集为300Mbps_UDP_Rx</Case>
+<Case>36) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="4] 2信道测试">
+<Case>1) 速率集为300Mbps_TCP_Tx</Case>
+<Case>2) 速率集为300Mbps_TCP_Rx</Case>
+<Case>3) 速率集为300Mbps_TCP_TRx</Case>
+<Case>4) 速率集为300Mbps_UDP_Tx</Case>
+<Case>5) 速率集为300Mbps_UDP_Rx</Case>
+<Case>6) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="5] 3信道测试">
+<Case>1) 速率集为300Mbps_TCP_Tx</Case>
+<Case>2) 速率集为300Mbps_TCP_Rx</Case>
+<Case>3) 速率集为300Mbps_TCP_TRx</Case>
+<Case>4) 速率集为300Mbps_UDP_Tx</Case>
+<Case>5) 速率集为300Mbps_UDP_Rx</Case>
+<Case>6) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="6] 4信道测试">
+<Case>1) 速率集为300Mbps_TCP_Tx</Case>
+<Case>2) 速率集为300Mbps_TCP_Rx</Case>
+<Case>3) 速率集为300Mbps_TCP_TRx</Case>
+<Case>4) 速率集为300Mbps_UDP_Tx</Case>
+<Case>5) 速率集为300Mbps_UDP_Rx</Case>
+<Case>6) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="7] 5信道测试">
+<Case>1) 速率集为300Mbps_TCP_Tx</Case>
+<Case>2) 速率集为300Mbps_TCP_Rx</Case>
+<Case>3) 速率集为300Mbps_TCP_TRx</Case>
+<Case>4) 速率集为300Mbps_UDP_Tx</Case>
+<Case>5) 速率集为300Mbps_UDP_Rx</Case>
+<Case>6) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="8] 6信道测试">
+<Case>1) 速率集为300Mbps_TCP_Tx</Case>
+<Case>2) 速率集为300Mbps_TCP_Rx</Case>
+<Case>3) 速率集为300Mbps_TCP_TRx</Case>
+<Case>4) 速率集为300Mbps_UDP_Tx</Case>
+<Case>5) 速率集为300Mbps_UDP_Rx</Case>
+<Case>6) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="9] 7信道测试">
+<Case>1) 速率集为300Mbps_TCP_Tx</Case>
+<Case>2) 速率集为300Mbps_TCP_Rx</Case>
+<Case>3) 速率集为300Mbps_TCP_TRx</Case>
+<Case>4) 速率集为300Mbps_UDP_Tx</Case>
+<Case>5) 速率集为300Mbps_UDP_Rx</Case>
+<Case>6) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="10] 8信道测试">
+<Case>1) 速率集为300Mbps_TCP_Tx</Case>
+<Case>2) 速率集为300Mbps_TCP_Rx</Case>
+<Case>3) 速率集为300Mbps_TCP_TRx</Case>
+<Case>4) 速率集为300Mbps_UDP_Tx</Case>
+<Case>5) 速率集为300Mbps_UDP_Rx</Case>
+<Case>6) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="11] 9信道测试">
+<Case>1) 速率集为300Mbps_TCP_Tx</Case>
+<Case>2) 速率集为300Mbps_TCP_Rx</Case>
+<Case>3) 速率集为300Mbps_TCP_TRx</Case>
+<Case>4) 速率集为300Mbps_UDP_Tx</Case>
+<Case>5) 速率集为300Mbps_UDP_Rx</Case>
+<Case>6) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="12] 10信道测试">
+<Case>1) 速率集为300Mbps_TCP_Tx</Case>
+<Case>2) 速率集为300Mbps_TCP_Rx</Case>
+<Case>3) 速率集为300Mbps_TCP_TRx</Case>
+<Case>4) 速率集为300Mbps_UDP_Tx</Case>
+<Case>5) 速率集为300Mbps_UDP_Rx</Case>
+<Case>6) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="13] 11信道测试">
+<Case>1) 速率集为300Mbps_TCP_Tx</Case>
+<Case>2) 速率集为300Mbps_TCP_Rx</Case>
+<Case>3) 速率集为300Mbps_TCP_TRx</Case>
+<Case>4) 速率集为300Mbps_UDP_Tx</Case>
+<Case>5) 速率集为300Mbps_UDP_Rx</Case>
+<Case>6) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="14] 12信道测试">
+<Case>1) 速率集为300Mbps_TCP_Tx</Case>
+<Case>2) 速率集为300Mbps_TCP_Rx</Case>
+<Case>3) 速率集为300Mbps_TCP_TRx</Case>
+<Case>4) 速率集为300Mbps_UDP_Tx</Case>
+<Case>5) 速率集为300Mbps_UDP_Rx</Case>
+<Case>6) 速率集为300Mbps_UDP_TRx</Case>
+</Item>
+</Mod>
+</Prod>

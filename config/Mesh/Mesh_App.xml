@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prod Tp="Mesh_App">
+<Mod name="Pppoe" tm="Pppoe">
+<Item ti="1] 149信道A模式">
+<Case>1) 速率集为6Mbps_TCP_Tx</Case>
+<Case>2) 速率集为6Mbps_TCP_Rx</Case>
+<Case>3) 速率集为6Mbps_TCP_TRx</Case>
+<Case>4) 速率集为6Mbps_UDP_Tx</Case>
+<Case>5) 速率集为6Mbps_UDP_Rx</Case>
+<Case>6) 速率集为6Mbps_UDP_TRx</Case>
+<Case>7) 速率集为54Mbps_TCP_Tx</Case>
+<Case>8) 速率集为54Mbps_TCP_Rx</Case>
+<Case>9) 速率集为54Mbps_TCP_TRx</Case>
+<Case>10) 速率集为54Mbps_UDP_Tx</Case>
+<Case>11) 速率集为54Mbps_UDP_Rx</Case>
+<Case>12) 速率集为54Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="2] 149信道N模式">
+<Case>1)2T2R_5G_149_N_MCS0_TCP_TX</Case>
+<Case>2)2T2R_5G_149_N_MCS0_TCP_RX</Case>
+<Case>3)2T2R_5G_149_N_MCS0_TCP_TRX</Case>
+<Case>4)2T2R_5G_149_N_MCS0_UDP_TX</Case>
+<Case>5)2T2R_5G_149_N_MCS0_UDP_RX</Case>
+<Case>6)2T2R_5G_149_N_MCS0_UDP_TRX</Case>
+<Case>7)2T2R_5G_149_N_MCS5_TCP_TX</Case>
+<Case>8)2T2R_5G_149_N_MCS5_TCP_RX</Case>
+<Case>9)2T2R_5G_149_N_MCS5_TCP_TRX</Case>
+<Case>10)2T2R_5G_149_N_MCS5_UDP_TX</Case>
+<Case>11)2T2R_5G_149_N_MCS5_UDP_RX</Case>
+<Case>12)2T2R_5G_149_N_MCS5_UDP_TRX</Case>
+<Case>13)2T2R_5G_149_N_MCS15_TCP_TX</Case>
+<Case>14)2T2R_5G_149_N_MCS15_TCP_RX</Case>
+<Case>15)2T2R_5G_149_N_MCS15_TCP_TRX</Case>
+<Case>16)2T2R_5G_149_N_MCS15_UDP_TX</Case>
+<Case>17)2T2R_5G_149_N_MCS15_UDP_RX</Case>
+<Case>18)2T2R_5G_149_N_MCS15_UDP_TRX</Case>
+</Item>
+<Item ti="3] 149信道AC模式">
+<Case>1) MCS0速率集65Mbps_TCP_Tx</Case>
+<Case>2) MCS0速率集65Mbps_TCP_Rx</Case>
+<Case>3) MCS0速率集65Mbps_TCP_TRx</Case>
+<Case>4) MCS0速率集65Mbps_UDP_Tx</Case>
+<Case>5) MCS0速率集65Mbps_UDP_Rx</Case>
+<Case>6) MCS0速率集65Mbps_UDP_TRx</Case>
+<Case>7) MCS2速率集195Mbps_TCP_Tx</Case>
+<Case>8) MCS2速率集195Mbps_TCP_Rx</Case>
+<Case>9) MCS2速率集195Mbps_TCP_TRx</Case>
+<Case>10) MCS2速率集195Mbps_UDP_Tx</Case>
+<Case>11) MCS2速率集195Mbps_UDP_Rx</Case>
+<Case>12) MCS2速率集195Mbps_UDP_TRx</Case>
+<Case>13) MCS5速率集520Mbps_TCP_Tx</Case>
+<Case>14) MCS5速率集520Mbps_TCP_Rx</Case>
+<Case>15) MCS5速率集520Mbps_TCP_TRx</Case>
+<Case>16) MCS5速率集520Mbps_UDP_Tx</Case>
+<Case>17) MCS5速率集520Mbps_UDP_Rx</Case>
+<Case>18) MCS5速率集520Mbps_UDP_TRx</Case>
+<Case>19) MCS9速率集866Mbp_TCP_Tx</Case>
+<Case>20) MCS9速率集866Mbp_TCP_Rx</Case>
+<Case>21) MCS9速率集866Mbp_TCP_TRx</Case>
+<Case>22) MCS9速率集866Mbp_UDP_Tx</Case>
+<Case>23) MCS9速率集866Mbp_UDP_Rx</Case>
+<Case>24) MCS9速率集866Mbp_UDP_TRx</Case>
+</Item>
+<Item ti="4] 36信道测试">
+<Case>1) MCS9速率集为866Mbps_TCP_Tx</Case>
+<Case>2) MCS9速率集为866Mbps_TCP_Rx</Case>
+<Case>3) MCS9速率集为866Mbps_TCP_TRx</Case>
+<Case>4) MCS9速率集为866Mbps_UDP_Tx</Case>
+<Case>5) MCS9速率集为866Mbps_UDP_Rx</Case>
+<Case>6) MCS9速率集为866Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="5] 48信道测试">
+<Case>1) MCS9速率集为866Mbps_TCP_Tx</Case>
+<Case>2) MCS9速率集为866Mbps_TCP_Rx</Case>
+<Case>3) MCS9速率集为866Mbps_TCP_TRx</Case>
+<Case>4) MCS9速率集为866Mbps_UDP_Tx</Case>
+<Case>5) MCS9速率集为866Mbps_UDP_Rx</Case>
+<Case>6) MCS9速率集为866Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="6] 153信道测试">
+<Case>1) MCS9速率集为866Mbps_TCP_Tx</Case>
+<Case>2) MCS9速率集为866Mbps_TCP_Rx</Case>
+<Case>3) MCS9速率集为866Mbps_TCP_TRx</Case>
+<Case>4) MCS9速率集为866Mbps_UDP_Tx</Case>
+<Case>5) MCS9速率集为866Mbps_UDP_Rx</Case>
+<Case>6) MCS9速率集为866Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="7] 157信道测试">
+<Case>1) MCS9速率集为866Mbps_TCP_Tx</Case>
+<Case>2) MCS9速率集为866Mbps_TCP_Rx</Case>
+<Case>3) MCS9速率集为866Mbps_TCP_TRx</Case>
+<Case>4) MCS9速率集为866Mbps_UDP_Tx</Case>
+<Case>5) MCS9速率集为866Mbps_UDP_Rx</Case>
+<Case>6) MCS9速率集为866Mbps_UDP_TRx</Case>
+</Item>
+<Item ti="8] 161信道测试">
+<Case>1) MCS9速率集为866Mbps_TCP_Tx</Case>
+<Case>2) MCS9速率集为866Mbps_TCP_Rx</Case>
+<Case>3) MCS9速率集为866Mbps_TCP_TRx</Case>
+<Case>4) MCS9速率集为866Mbps_UDP_Tx</Case>
+<Case>5) MCS9速率集为866Mbps_UDP_Rx</Case>
+<Case>6) MCS9速率集为866Mbps_UDP_TRx</Case>
+</Item>
+</Mod>
+</Prod>
