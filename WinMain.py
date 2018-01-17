@@ -20,9 +20,7 @@ try:
 except ImportError:
     import xml.etree.ElementTree as ET
 
-from lib.kmanager import kmanager
-
-from lib.ktClass import ktClass
+from lib import *
 cf = ConfigParser.ConfigParser()
 
 #定义运行脚本的线程
@@ -44,6 +42,8 @@ class RunThread(QtCore.QThread):
         self.wait()
         # self.quit()
     def judge(self,args):
+        if not args.strip():
+           return None 
         cc=re.search(r'([^a-zA-Z0-9_])',args)
         #如果为xxx.bbb 形式则表示函数调用,如果ac=XXXX() 表示赋值
         if cc.group() == ".":
@@ -54,21 +54,20 @@ class RunThread(QtCore.QThread):
         if not self.parent.start_flag:
             product=str(self.parent.ui.product.currentText())
             subprod=str(self.parent.ui.son_product.currentText())
-            kcweb="from lib.WEB."+product+" import "+subprod+" as WEB_"+subprod
-            kchttp="from lib.API."+product+" import "+subprod+" as API_"+subprod
-            # tsclass="from test."+product+"."+product+" import Test"+subprod
-            importlist=[kcweb,kchttp]
-            for i in importlist:
-                print i
-                exec i
+            
+            importlst = self.parent.config['import']['type'].split(",")
+            for i in importlst:
+                importclass="from lib.%s." %(i)+product+" import "+subprod+" as %s_" %(i)+subprod
+                print importclass
+                exec importclass
             #初始化kc 与 kt函数对象
             classname=[]
-            username=unicode(self.parent.ui.username.text())
-            password = unicode(self.parent.ui.password.text())
-            dip = unicode(self.parent.ui.ip.text())
-            kc_init_args=str({'user':username,'pwd':password,"dip":dip})
-            print "kc_init_args=",kc_init_args
-            ktcl_init_args = {}
+            dut_init_args=str(self.parent.config['dut'])
+            client_init_args=str(self.parent.config['client'])
+            server_init_args=str(self.parent.config['server'])
+            km_init_args=str(self.parent.config['km'])
+            # print "kc_init_args=",kc_init_args
+            # ktcl_init_args = {}
             # init_args 为从GUI上读取的变量字典集合
             # kc = eval(subprod)(**kc_init_args)
             # kt = KT(filedir=self.parent.reportdir)   #
@@ -167,11 +166,14 @@ class RunThread(QtCore.QThread):
                                 if testDict['pre_codesteps'][step]:
                                     self.log_text.emit("Act",row,testDict['pre_actsteps'][step],str(False))
                                     row=row+1
-                                    if self.judge(testDict['pre_codesteps'][step]):
+                                    retjudge = self.judge(testDict['pre_codesteps'][step])
+                                    if retjudge:
                                         ret=eval(testDict['pre_codesteps'][step])
-                                    else:
+                                    elif retjudge == False:
                                         exec testDict['pre_codesteps'][step]
                                         ret = True
+                                    elif retjudge == None:
+                                        continue
                                     # ret = eval(testDict['pre_codesteps'][step])
                                     self.log_text.emit("Code",row,testDict['pre_codesteps'][step],str(ret))
                                     row=row+1
@@ -216,12 +218,15 @@ class RunThread(QtCore.QThread):
                             for step in xrange(case_len):
                                 # QApplication.processEvents()
                                 try:
-                                    if self.judge(testDict['codesteps'][step]):
+                                    retjudge = self.judge(testDict['codesteps'][step])
+                                    if retjudge:
                                         ret=eval(testDict['codesteps'][step])
                                         retstr = ret
-                                    else:
+                                    elif retjudge == False:
                                         exec testDict['codesteps'][step]
                                         ret = True
+                                    elif retjudge == None:
+                                        continue
                                 except Exception,e:
                                     ret = False
                                     print "error step=",testDict['codesteps'][step]
@@ -269,11 +274,14 @@ class RunThread(QtCore.QThread):
                                 self.log_text.emit("Act",row,testDict['suf_actsteps'][step],str(False))
                                 row=row+1
                                 # ret = eval(testDict['suf_codesteps'][step])
-                                if self.judge(testDict['suf_codesteps'][step]):
+                                retjudge = judge(testDict['suf_codesteps'][step])
+                                if retjudge:
                                     ret=eval(testDict['suf_codesteps'][step])
-                                else:
+                                elif retjudge == False:
                                     exec testDict['suf_codesteps'][step]
                                     ret = True
+                                elif retjudge == None:
+                                    continue
                                 self.log_text.emit("Code",row,testDict['suf_codesteps'][step],str(ret))
                                 row=row+1
                         row = row+2
@@ -347,7 +355,6 @@ class MainWindow(QMainWindow):
         self.start_flag = 0
     def module_isnull(self,**kargs):
         #判断模块里面是否有需要测试的点
-        print "module_isnull kargs=",kargs
         for k,v in kargs.iteritems():
             if k == "0" or k == "C":
                 continue
@@ -486,35 +493,38 @@ class MainWindow(QMainWindow):
         t_obj.Hyperlinks.Add(Anchor=t_obj.Range(t_location),Address=filename,SubAddress=source)
     def open_config(self):
         pass
-    def savecfg(self):
-        #把GUI上的信息保存到config.ini中去
+    def savecfg(self,flag=True):
+        #先把以前的信息读取出来,然后保存成字典,然后把GUI上有的参数替换掉,没有的参数不操作
         global ConfigFile
+        init_dict = ParserCfg(ConfigFile)
+        guidict = {}
+        guidict['kt']={}
+        guidict['km']={}
+        guidict['dut']={}
+        
         cf = ConfigParser.ConfigParser()
-        dip = unicode(self.ui.ip.text())
-        product = unicode(self.ui.product.currentText())
-        subProd = unicode(self.ui.son_product.currentText())
-        username=unicode(self.ui.username.text())
-        password = unicode(self.ui.password.text())
-        sship = unicode(self.ui.sship.text())
-        com = unicode(self.ui.atten_COM.currentText())
         
-        cf.add_section("kt")
-        cf.set("kt", "sship", sship)
+        guidict['dut']['dip'] = unicode(self.ui.ip.text())
+        guidict['dut']['product'] = unicode(self.ui.product.currentText())
+        guidict['dut']['subprod'] = unicode(self.ui.son_product.currentText())
+        guidict['dut']['username']=unicode(self.ui.username.text())
+        guidict['dut']['password'] = unicode(self.ui.password.text())
         
-        cf.add_section("dut")
-        cf.set("dut", "product", product)
-        cf.set("dut", "subProd", subProd)
-        cf.set("dut", "username", username)
-        cf.set("dut", "password", password)
-        cf.set("dut", "dip", dip)
-        
-        cf.add_section("km")
-        cf.set("km", "intf", "ra0")
-        cf.set("km", "com", com)
-        
+        guidict['kt']['host'] = unicode(self.ui.sship.text())
+        guidict['km']['com'] = unicode(self.ui.com.text())
+        for key,value in init_dict.iteritems():
+            cf.add_section(key)
+            for k,v in value.iteritems():
+                if guidict.has_key(key):
+                    if guidict[key].has_key(k):
+                        cf.set(key, k, guidict[key][k])
+                        continue
+                cf.set(key, k, v)
         with open(ConfigFile.replace("\\","/"),"w+") as f:
             cf.write(f)
-        QMessageBox.information(self,"savecfg",u"保存配置成功",QMessageBox.Yes)    
+        self.config=ParserCfg(ConfigFile)
+        if flag:
+            QMessageBox.information(self,"savecfg",u"保存配置成功",QMessageBox.Yes)
     def run_test(self):
         # self.refresh_testcases()
         text=unicode(self.ui.start_test.text())
@@ -522,6 +532,7 @@ class MainWindow(QMainWindow):
             self.run_stop()
             self.ui.start_test.setText(u"开始测试")
         else:
+            self.savecfg(False)
             self.init_report()
             self.ui.start_test.setText(u"停止测试")
             self.runthread.start_test()
@@ -621,10 +632,13 @@ class MainWindow(QMainWindow):
         self.ui.ip.setText(self.config['dut']['dip'])
         self.ui.username.setText(self.config['dut']['username'])
         self.ui.password.setText(self.config['dut']['password'])
+        self.ui.sship.setText(self.config['kt']['host'])
+        self.ui.com.setText(self.config['km']['com'])
+        # self.ui.password.setText(self.config['dut']['password'])
     def init_product(self):
         #读取config/AllPro.ini的文件
-        global G_MainDict
-        self.config=G_MainDict
+        # global G_MainDict
+        self.config=ParserCfg(ConfigFile)
         self.productfile=os.path.join(ConfigDir,"AllPro.ini").replace("\\","/")
         #
         current_pro=self.config['dut']['product']
