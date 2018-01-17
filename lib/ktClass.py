@@ -68,19 +68,23 @@ class ktClass(object):
             self.shell('su -c svc wifi enable').read().strip()
         else:
             self.shell('su -c svc wifi disable').read().strip()
-    def adb_wifi_config(self,ssid,password):
-        if password:
-            network = """network={
+    def adb_wifi_config(self,kargs='{}'):
+        kargs = eval(kargs)
+        ssid = kargs['ssid']
+        pwd = kargs['pwd']
+        # print "kargs=",kargs
+        if pwd:
+            network = u"""network={
             ssid="%s"
             psk="%s"
             key_mgmt=WPA-PSK
             priority=1
         }
-        """ %(ssid,password)
+        """ %(ssid,pwd)
         else:
-            network = """network={
+            network = u"""network={
             ssid="%s"
-            key_mgmt=WPA-PSK
+            key_mgmt=NONE
             priority=1
         }
         """ %(ssid)
@@ -90,8 +94,24 @@ class ktClass(object):
         cmdlist.append("svc wifi disable")
         cmdlist.append("svc wifi enable")
         cmdlist.append("exit")
-        pipe = subprocess.Popen("adb shell su root", stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-        code = pipe.communicate("\n".join(cmdlist) + "\n")
+        try:
+            pipe = subprocess.Popen("adb shell su root", stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+            code = pipe.communicate("\n".join(cmdlist) + "\n")
+            time.sleep(5)
+            #检查是否连接上ssid
+            cmd = """adb shell su root "netcfg|grep wlan0|awk '{print $3}'" """
+            for x in xrange(30):
+                lines = os.popen(cmd)
+                lines=lines.readlines()
+                ret = lines[0].strip()
+                print "wlan0 ip = ",ret
+                if ret != "0.0.0.0/0":
+                    time.sleep(3)
+                    return True
+                time.sleep(1)
+            return False
+        except Exception,e:
+            return False
     def setIp(self,kargs='{}'):
         #初始默认字典
         init_default_dict = {"iface":"eth1","ip":"","mask":"","gateway":"","dns":"","mac":"","mtu":""}
@@ -923,7 +943,7 @@ class ks():
                 break
         return buffer
 if __name__ == "__main__":
-    kt_obj = ktClass(type="ssh",host="192.168.20.2",username="root",password="tendatest")
+    kt_obj = ktClass(type="adb",host="192.168.20.2",username="root",password="tendatest")
     # kt_obj = kt(type="ssh",host="192.168.20.2",username="root",password="tendatest")
     ipdict = {"iface":"eth1","ip":"192.168.3.35","mask":"255.255.255.0","gateway":"192.168.3.1","dns":"192.168.3.1","mtu":"1450","mac":"00:ab:cd:11:22:33","dns":"223.5.5.5"}
     init_default_dict = {"auth":"chap","user":["tenda"],"pwd":["tenda"],"lip":"10.10.10.1","rip":"10.10.10.10","num":"1","iface":"eth1","padot":"0","dns":"202.96.134.133,202.96.128.86","mtu":"","mru":"","mppe":"","servername":"","repadr":"","mode":"add"}
@@ -954,9 +974,10 @@ if __name__ == "__main__":
     # print kt_obj.nslookup(str(nslookupdict))
     parserPacketdict = {'filter':'bootp.option.dhcp=1,ip.src=0.0.0.0,ip.dst=255.255.255.255'}
     packetCapturedict = {"filter":"udp port 67"}
-    kt_obj.packetCapture(str(packetCapturedict))
-    kt_obj.sendCmd("dhclient eth1")
-    code = kt_obj.parserPacket(str(parserPacketdict))
+    # kt_obj.packetCapture(str(packetCapturedict))
+    # kt_obj.sendCmd("dhclient eth1")
+    ssid={"ssid":"PSST_ceshi_qdy","pwd":"00112233"}
+    code = kt_obj.adb_wifi_config((str(ssid)))
     print code
     # code = kt_obj.ntpSerCfg()
     # print code

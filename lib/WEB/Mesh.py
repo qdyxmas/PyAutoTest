@@ -801,7 +801,7 @@ class AdbTools(object):
                                   os.path.join(os.path.expanduser('~'), '%s.apk' % package))
 
 class Nova(BaseApp):
-    def __init__(self):
+    def __init__(self,kargs='{}'):
         cmdlst = ["taskkill /f /im node.exe","start /b appium -a 127.0.0.1 -p 4723 -U  LGD857cfd6ea69  --no-reset"]
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
@@ -819,7 +819,7 @@ class Nova(BaseApp):
             #向上滑动
         for cmd in cmdlst:
             os.system(cmd)
-        time.sleep(5)
+        time.sleep(10)
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
         self.width,self.height=self.getSize(self.driver)
         MapDict = {} #这个映射到时候从Excel中读取
@@ -828,7 +828,7 @@ class Nova(BaseApp):
         self.MapDict = {'mywifi':"com.tenda.router.app:id/main_radio_wifi","setting":'com.tenda.router.app:id/main_radio_setting'}
         # self.toolbox()
         #开启appium,如果杀掉的话 需要直接杀掉node.exe即可
-    def quit_app(self, package):
+    def quit_app(self, package="com.tenda.router.app"):
         """
         退出应用
         :return:
@@ -845,6 +845,8 @@ class Nova(BaseApp):
                 return i.split()[-1] == 'mScreenOn=true'
             if 'Display Power' in i:
                 return 'ON' in i.split('=')[-1].upper()
+    def gotomain(self):
+        return True
     def register(self,kargs):
         kargs = eval(kargs)
         #第一步点击class:android.widget.ImageButton
@@ -970,6 +972,8 @@ class Nova(BaseApp):
                 self.SetValue(self,funcname,key[1],key[0])
             #然后点击保存
             self.SetValue(self,funcname,'','submit')
+            if self.getElement(self,'',*self.cmapdict[funcname]['commit']):
+                self.SetValue(self,funcname,'','commit')       
             time.sleep(1)
             self.SetValue(self,funcname,'','back')
             return True
@@ -1346,21 +1350,33 @@ if __name__ == '__main__':
     # a.netCfg('{"type":"dhcp"}')
     # print KeyCode.KEYCODE_GRAVE
     staticdict={"ip":"192.168.3.124","mask":"255.255.255.0","gateway":"192.168.3.1","dns1":"192.168.3.1"}
-    wifidict = {"ssid":u"""中文测试""","pwd":"012345678"}
+    wifidict = u'{"ssid":u"中文","pwd":"012345678"}'
     dhcpdict = {"type":"B"}
-    guestdict = {'switch':"ON",'ssid':"abcdd",'pwd':"test122222","validtime":"4"}
+    guestdict = {'switch':"ON",'ssid':"Nove_Mesh_Guest_Test",'pwd':"test122222","validtime":"4"}
     # dnsserdict = {"type":"auto"}
     dnsserdict = {"type":"manual","dns1":"1.1.1.1","dns2":"2.2.2.2"}
-    rbtdict = {"switch":"ON","reboot_time":"14:36","date":"OFF ON ON OFF ON ON OFF"}
+    rbtdict = {"switch":"ON","reboot_time":"16:50","date":"ON OFF ON OFF OFF ON ON"}
     fstrmtdict = {"switch":"ON"}
-    for x in xrange(26,27):
-        portmapadd = {'oprate':'deleteall','rip':'192.168.5.185','rinport':'%s' %(x),'routport':'%s' %(x),'rproto':'all'}
-        try:
-            a.portmap(str(portmapadd))
-        except Exception,e:
-            print e
-            traceback.print_exc()
-            break
+    portmapdict = {'oprate':'add','ip':'192.168.5.185','inport':'21','outport':'21','proto':'all'}
+    # alllst = [wifidict,guestdict,dnsserdict,rbtdict,fstrmtdict,portmapdict,dhcpdict,staticdict]
+    
+    a.wifi_cfg(wifidict)
+    # a.guest_network(str(guestdict))
+    # a.dnsser(str(dnsserdict))
+    # a.reboot(str(rbtdict))
+    # a.fastremote(str(fstrmtdict))
+    # a.portmap(str(portmapdict))
+    # a.internet_static(str(staticdict))
+    # a.dhcpser(str(dhcpdict))
+        
+    # for x in xrange(26,27):
+        # portmapadd = {'oprate':'deleteall','rip':'192.168.5.185','rinport':'%s' %(x),'routport':'%s' %(x),'rproto':'all'}
+        # try:
+            # a.portmap(str(portmapadd))
+        # except Exception,e:
+            # print e
+            # traceback.print_exc()
+            # break
     # a.internet_dhcp()
     # a=AdbTools()
     # print a.get_current_application()
