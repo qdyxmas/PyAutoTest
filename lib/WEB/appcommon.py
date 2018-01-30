@@ -122,7 +122,10 @@ class BaseApp():
     def parser_objlst(self,value,*args,**kargs):
         attr = kargs['attribute']
         if attr == "index":
-            retobj = args[int(kargs[value])]
+            if kargs.has_keys("TEXT"):
+                return args[int(kargs['TEXT'])]
+            else:
+                retobj = args[int(kargs[value])]
             return retobj
         elif attr == "value":
             for i in args:
