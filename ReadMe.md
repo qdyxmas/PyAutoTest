@@ -16,7 +16,7 @@
 
 	
 # 2、PyAutoTest平台介绍 #
-	PyAutoTest平台主要通过调用automation里面的tcl脚本完成各项Ixia指定性能的测试
+	主要用于WEB UI自动化、APP自动化、接口自动化
 ## 	2.1 文件目录介绍 ##
 **2.1.1 WinMain.py**
 
