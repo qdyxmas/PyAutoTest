@@ -50,6 +50,18 @@ class RunThread(QtCore.QThread):
             return True
         else:
             return False
+    def sorted_keys(self,*kargs):
+        kargs=list(kargs)
+        flag = 0
+        if 'C' in kargs:
+            flag = 1
+            kargs.remove('C')
+        m_keys = kargs
+        m_keys = map(lambda x:int(x),m_keys)
+        num_keys = sorted(m_keys)
+        if flag:
+            num_keys.append('C')
+        return num_keys
     def run(self):
         if not self.parent.start_flag:
             product=str(self.parent.ui.product.currentText())
@@ -114,25 +126,31 @@ class RunThread(QtCore.QThread):
                 # print "treedict=",treedict
                 module_dict = eval(treedict[module])
                 items_len = len(module_dict)
-                # print "tems_dict.keys()=",module_dict.keys()
-                # print "module_dict=",module_dict.keys()
-                print "items_len=",items_len
+                # print "module_dict.keys=",module_dict.keys()
+                #先把字典的keys进行排序 然后循环keys
+                # m_keys = module_dict.keys()
+                # m_keys = map(lambda x:int(x),m_keys)
+                num_keys = self.sorted_keys(*module_dict.keys())
                 dict_row = logdict_row
-                for i in xrange(items_len):
+                for i in num_keys:
                     print "i=",i
                     testDict = {}
-                    if i == items_len-1:
+                    if i == 'C':
                         testDict =  module_dict['C']
                     else:
+                        if not module_dict.has_key(str(i)):
+                            continue
                         testDict = module_dict[str(i)]
                     if i == 0:
                         items_dict[str(i)] = module_dict[str(i)]
-                    elif i == items_len - 1:
+                    elif i == 'C':
                         items_dict[str(i)] = module_dict['C']
                     print "items_dict=",items_dict
                     #如果测试项中的测试点为空则跳过
                     
                     #如果itemlist不全部为空则进行循环
+                    if not items_dict.has_key(str(i)):
+                        continue
                     if any(items_dict[str(i)]['testcases']):
                         item_lst = []
                         # print "type=",type(treedict[module])
@@ -208,7 +226,7 @@ class RunThread(QtCore.QThread):
                             if case:
                                 for k,v in testDict['testcases'][case_num].iteritems():
                                     #循环字典进行变量初始化赋值
-                                    if k != 'steps':
+                                    if k != 'steps' and len(k)>0:
                                         exec "%s=v" %(k)
                                         if k != "casename":
                                             data_source = data_source+" %s=%s " %(k,v)
@@ -228,9 +246,10 @@ class RunThread(QtCore.QThread):
                                     elif retjudge == None:
                                         continue
                                 except Exception,e:
+                                    #如果有一步执行失败则直接跳出循环进行下一个case
                                     ret = False
                                     print "error step=",testDict['codesteps'][step]
-                                    print e
+                                    break
                                     # self.parent.writeData2Excel(ret,sheet_location)
                                 # print testDict['actsteps'][step]
                                 self.log_text.emit("Act",row,testDict['actsteps'][step]+data_source,str(False))
@@ -244,7 +263,7 @@ class RunThread(QtCore.QThread):
                                 self.msleep(100)
                             # self.log_text.emit("Case",row,casename_+u"测试完成",False)
                             # print "retlst=",retlst
-                            if str(ret) != 'True':
+                            if 'False' in retlst:
                                 self.log_text.emit("Case",row,u"测试完成:"+casename_+u" => Fail",str(False))
                                 item_lst.append(u"×  "+casename_)
                                 testsfail = testsfail + 1
@@ -423,7 +442,7 @@ class MainWindow(QMainWindow):
                     sht.Range(cell).Font.Color = 0xff0000
                 else:
                     sht.Range(cell).Value = u"  ×"
-                    sht.Range(cell1).Value = result
+                    # sht.Range(cell1).Value = result
                     sht.Range(cell).Font.Color = 0x0000ff
         elif type == "Case":
             cell0 = "A%s" %(row)
@@ -508,7 +527,7 @@ class MainWindow(QMainWindow):
         guidict['dut']['product'] = unicode(self.ui.product.currentText())
         guidict['dut']['subprod'] = unicode(self.ui.son_product.currentText())
         guidict['dut']['username']=unicode(self.ui.username.text())
-        guidict['dut']['password'] = unicode(self.ui.password.text())
+        guidict['dut']['pwd'] = unicode(self.ui.password.text())
         
         guidict['kt']['host'] = unicode(self.ui.sship.text())
         guidict['km']['com'] = unicode(self.ui.com.text())
@@ -631,10 +650,10 @@ class MainWindow(QMainWindow):
     def init_config(self):
         self.ui.ip.setText(self.config['dut']['dip'])
         self.ui.username.setText(self.config['dut']['username'])
-        self.ui.password.setText(self.config['dut']['password'])
+        self.ui.password.setText(self.config['dut']['pwd'])
         self.ui.sship.setText(self.config['kt']['host'])
         self.ui.com.setText(self.config['km']['com'])
-        # self.ui.password.setText(self.config['dut']['password'])
+        # self.ui.password.setText(self.config['dut']['pwd'])
     def init_product(self):
         #读取config/AllPro.ini的文件
         # global G_MainDict
@@ -832,11 +851,13 @@ class ReadCase:
         #解析Item列
         self.modules={}
         itemdict={}
+        itemnum = -1
         for row in range(1,self.nrows):
             itemname=self.sheet.cell(row,0).value
             if itemname:
                 itemdict['itemname']=itemname
                 item_id=itemname.split("]")[0]
+                itemnum = itemnum+1
                 if itemname.startswith("0]") or itemname.startswith("C]"):
                     itemdict['testcases']=self.parserCase0E(row)
                     itemdict['codesteps'] = self.parserSteps(1,self.sheet.cell(row,3).value)
@@ -852,11 +873,14 @@ class ReadCase:
                     itemdict['actsteps'] = self.parserSteps(0,self.sheet.cell(row+1,2).value)
                     itemdict['pre_actsteps'] = self.parserSteps(0,self.sheet.cell(row,2).value)
                     itemdict['pre_codesteps'] = self.parserSteps(1,self.sheet.cell(row,3).value)
-                    itemdict['suf_codesteps'] =self.parserSteps(1,self.sheet.cell(row+casenum,3).value)
-                    itemdict['suf_actsteps'] =self.parserSteps(0,self.sheet.cell(row+casenum,2).value)
+                    itemdict['suf_codesteps'] =self.parserSteps(1,self.sheet.cell(row+casenum+1,3).value)
+                    itemdict['suf_actsteps'] =self.parserSteps(0,self.sheet.cell(row+casenum+1,2).value)
             #得到所有的参数
             new_itemdict=copy.deepcopy(itemdict)
-            self.modules['%s' %(item_id)] =  new_itemdict
+            if item_id == 'C':
+                self.modules['%s' %(item_id)] =  new_itemdict
+            else:
+                self.modules['%s' %(itemnum)] =  new_itemdict
     def parserSteps(self,flag,stepstr=""):
         u"""flag=1 1> kc xxxxx 2>kt xxxx 的字符串解析['kc xxxx','kt xxxx']"""
         retlst =[]
@@ -963,6 +987,8 @@ class Createxml:
             curdict=eval(v)
             itemlen=len(curdict)-2
             for i in xrange(1,itemlen+1):
+                if not curdict.has_key(str(i)):
+                    continue
                 itemdict=curdict[str(i)]
                 item_node=self.doc.createElement('Item')
                 item_text=itemdict['itemname']
