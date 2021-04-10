@@ -4,7 +4,7 @@ paramiko==2.7.1
 requests==2.24.0
 xlrd==1.2.0
 selenium==3.141.0
-Pillow==6.2.2
+Pillow==8.1.1
 Appium-Python-Client==0.52
 IPy==1.0
 wmi==1.5.1
