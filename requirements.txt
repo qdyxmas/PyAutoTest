@@ -1,6 +1,6 @@
 configobj==5.0.6
 pyserial==3.4
-paramiko==2.7.1
+paramiko==2.10.1
 requests==2.24.0
 xlrd==1.2.0
 selenium==3.141.0
